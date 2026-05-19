@@ -12,3 +12,6 @@ models/
 *.log
 .env
 .env.*
+
+AGENTS.md
+TODO.md
