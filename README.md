@@ -85,7 +85,6 @@ Current local note: Python 3.11 is installed and should be used for the model se
 
 ## Important Files
 
-- `TODO.md`: project progress tracker.
 - `docs/product-plan.md`: product and architecture plan.
 - `src/main/modelManager.ts`: desktop-side model process manager.
 - `model_service/main.py`: local model service skeleton.
