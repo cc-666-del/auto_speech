@@ -1,0 +1,10 @@
+{
+  "activeAdapter": "cosyvoice",
+  "cosyVoice": {
+    "repoDir": "models/CosyVoice",
+    "modelDir": "models/CosyVoice/pretrained_models/CosyVoice2-0.5B",
+    "useFp16": true,
+    "loadJit": false,
+    "loadTrt": false
+  }
+}

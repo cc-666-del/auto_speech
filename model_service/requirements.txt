@@ -1,0 +1,2 @@
+# Runtime kept intentionally small until a real voice cloning adapter is installed.
+# Heavy model dependencies should live in model-specific requirement files.

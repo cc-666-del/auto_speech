@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.vite/
+.npm-cache/
+.venv/
+__pycache__/
+*.pyc
+auto_speech_data/
+logs/
+release/
+models/
+*.log
+.env
+.env.*

@@ -1,0 +1,69 @@
+{
+  "name": "auto-speech",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Desktop voiceover tool with local voice cloning model lifecycle management.",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "dev:web": "vite --host 127.0.0.1",
+    "build:main": "tsc -p tsconfig.main.json",
+    "dev": "npm run build:main && concurrently \"vite --host 127.0.0.1\" \"tsc -p tsconfig.main.json --watch\" \"wait-on http://127.0.0.1:5173 dist/main/main.js && electron .\"",
+    "build": "tsc -p tsconfig.main.json && vite build",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.main.json --noEmit",
+    "pack:win": "npm run build && electron-builder --win dir --x64",
+    "installer": "npm run build && electron-builder --win nsis --x64"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "^7.0.0"
+  },
+  "devDependencies": {
+    "@esbuild/win32-x64": "^0.27.7",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "concurrently": "^9.0.0",
+    "electron": "^33.0.0",
+    "electron-builder": "^26.8.1",
+    "typescript": "^5.7.0",
+    "wait-on": "^8.0.0"
+  },
+  "build": {
+    "appId": "com.local.autospeech",
+    "productName": "Auto Speech",
+    "asar": false,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json",
+      "model_service/**/*",
+      "scripts/**/*"
+    ],
+    "win": {
+      "artifactName": "AutoSpeech-Setup-${version}.${ext}",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Auto Speech",
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}

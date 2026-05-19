@@ -1,0 +1,6 @@
+# Installed by scripts/setup-cosyvoice.ps1 inside models/CosyVoice/.venv.
+# CosyVoice keeps its own requirements.txt in the cloned upstream repo.
+modelscope
+huggingface_hub
+torch
+torchaudio
