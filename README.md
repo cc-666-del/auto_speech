@@ -90,4 +90,4 @@ npm.cmd run dev
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=cc-666-del/auto_speech&type=Date)](https://www.star-history.com/#cc-666-del/auto_speech&Date)
+[![Star History Chart](https://starchart.cc/cc-666-del/auto_speech.svg)](https://starchart.cc/cc-666-del/auto_speech)
