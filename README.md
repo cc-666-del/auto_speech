@@ -1,5 +1,9 @@
 # Auto Speech
 
+[![GitHub stars](https://img.shields.io/github/stars/cc-666-del/auto_speech?style=social)](https://github.com/cc-666-del/auto_speech/stargazers)
+[![Release](https://img.shields.io/github/v/release/cc-666-del/auto_speech)](https://github.com/cc-666-del/auto_speech/releases)
+[![Downloads](https://img.shields.io/github/downloads/cc-666-del/auto_speech/total)](https://github.com/cc-666-del/auto_speech/releases)
+
 Auto Speech is a desktop voiceover tool for generating narration audio with a cloned local voice.
 
 ## Download
