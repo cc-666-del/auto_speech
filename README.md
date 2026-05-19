@@ -90,4 +90,4 @@ npm.cmd run dev
 
 ## Star History
 
-[![Star History Chart](https://starchart.cc/cc-666-del/auto_speech.svg)](https://starchart.cc/cc-666-del/auto_speech)
+[![Star History Chart](assets/star-history.svg)](https://github.com/cc-666-del/auto_speech/stargazers)
