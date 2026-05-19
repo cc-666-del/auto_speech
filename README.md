@@ -2,13 +2,44 @@
 
 Auto Speech is a desktop voiceover tool for generating narration audio with a cloned local voice.
 
-The project is currently in the engineering skeleton stage. The first milestone is to make the desktop app reliably start, monitor, load, unload, and shut down a local model service.
-
 ## Download
 
 Download the Windows installer from the [v0.1.0 release](https://github.com/cc-666-del/auto_speech/releases/tag/v0.1.0).
 
-The installer does not include CosyVoice model weights or the Python virtual environment. After installing, open the model settings page and click `Initialize CosyVoice`, or run the bundled setup script manually.
+Download and run `AutoSpeech-Setup-0.1.0.exe`. The installer opens a normal setup wizard, lets you choose the installation directory, and creates desktop and Start menu shortcuts.
+
+The installer includes the desktop app, model service, and setup scripts. It does not include CosyVoice model weights or the Python virtual environment. After installing:
+
+1. Launch Auto Speech.
+2. Open the model settings page.
+3. Click `Initialize CosyVoice`.
+4. Wait for the PowerShell setup window to finish downloading and installing the model environment.
+5. Return to Auto Speech and click `Load`.
+
+You can also run the setup script manually from the installed app folder:
+
+```powershell
+.\resources\app\scripts\setup-cosyvoice.ps1
+```
+
+## System Requirements
+
+Minimum recommended computer:
+
+- Windows 10 or Windows 11, 64-bit.
+- NVIDIA GPU with CUDA support and at least 8 GB VRAM.
+- 16 GB system RAM.
+- 25 GB free disk space for the app, CosyVoice repository, Python environment, PyTorch, and model weights.
+- Python 3.10 or 3.11 available on the system path or through the Windows Python launcher.
+- Stable internet connection for first-time CosyVoice initialization.
+
+Recommended for smoother local generation:
+
+- NVIDIA GPU with 12 GB or more VRAM.
+- 32 GB system RAM.
+- Recent NVIDIA driver.
+
+CPU-only usage is not the target path for this app and may be too slow for practical narration generation.
 
 ## Current Stack
 
@@ -51,64 +82,4 @@ Run the desktop app:
 
 ```powershell
 npm.cmd run dev
-```
-
-## Build a Windows Installer
-
-The build creates a downloadable Windows `.exe` installer, for example `AutoSpeech-Setup-0.1.0.exe`.
-The installer uses a normal setup wizard, lets the user choose the installation directory, and creates desktop and Start menu shortcuts.
-The installer packages the desktop app, model service, and setup scripts. It does not bundle the local CosyVoice repository, model weights, or Python virtual environment because that payload is too large for a reliable single-file NSIS installer.
-
-Build with the mirror-aware helper:
-
-```cmd
-scripts\build-installer.cmd
-```
-
-Or run npm directly:
-
-```powershell
-npm.cmd run installer
-```
-
-The installer will be created in `release/`.
-After installing, launch Auto Speech from the desktop shortcut or Start menu.
-To enable real CosyVoice generation on a newly installed copy, run the bundled `scripts\setup-cosyvoice.ps1` from the installed app folder.
-
-For a faster unpacked app folder without an installer:
-
-```powershell
-npm.cmd run pack:win
-```
-
-Run the model service manually:
-
-```powershell
-.\.venv\Scripts\python.exe model_service/main.py --port 8765
-```
-
-Current local note: Python 3.11 is installed and should be used for the model service.
-
-## Important Files
-
-- `src/main/modelManager.ts`: desktop-side model process manager.
-- `model_service/main.py`: local model service skeleton.
-- `model_service/model_config.json`: model adapter configuration.
-
-## GPU Strategy
-
-The app is designed to load the model when the software starts and unload it when the software closes. Manual controls are also planned and partially scaffolded in the UI.
-
-## CosyVoice Model
-
-Install CosyVoice and download the CosyVoice2-0.5B model:
-
-```powershell
-.\scripts\setup-cosyvoice.ps1
-```
-
-Switch the active adapter back to CosyVoice if needed:
-
-```powershell
-.\scripts\use-cosyvoice-model.ps1
 ```
