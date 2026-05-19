@@ -6,7 +6,7 @@ The project is currently in the engineering skeleton stage. The first milestone 
 
 ## Download
 
-Download the Windows installer from `release/AutoSpeech-Setup-0.1.0.exe`.
+Download the Windows installer from the [v0.1.0 release](https://github.com/cc-666-del/auto_speech/releases/tag/v0.1.0).
 
 The installer does not include CosyVoice model weights or the Python virtual environment. After installing, open the model settings page and click `Initialize CosyVoice`, or run the bundled setup script manually.
 
