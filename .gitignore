@@ -7,7 +7,9 @@ __pycache__/
 *.pyc
 auto_speech_data/
 logs/
-release/
+release/*
+!release/
+!release/AutoSpeech-Setup-*.exe
 models/
 *.log
 .env
@@ -15,3 +17,4 @@ models/
 
 AGENTS.md
 TODO.md
+docs/

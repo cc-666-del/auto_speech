@@ -4,6 +4,12 @@ Auto Speech is a desktop voiceover tool for generating narration audio with a cl
 
 The project is currently in the engineering skeleton stage. The first milestone is to make the desktop app reliably start, monitor, load, unload, and shut down a local model service.
 
+## Download
+
+Download the Windows installer from `release/AutoSpeech-Setup-0.1.0.exe`.
+
+The installer does not include CosyVoice model weights or the Python virtual environment. After installing, open the model settings page and click `Initialize CosyVoice`, or run the bundled setup script manually.
+
 ## Current Stack
 
 - Desktop: Electron.
@@ -85,7 +91,6 @@ Current local note: Python 3.11 is installed and should be used for the model se
 
 ## Important Files
 
-- `docs/product-plan.md`: product and architecture plan.
 - `src/main/modelManager.ts`: desktop-side model process manager.
 - `model_service/main.py`: local model service skeleton.
 - `model_service/model_config.json`: model adapter configuration.
